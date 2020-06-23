@@ -28,16 +28,16 @@ int main(int argc, char** argv) {
   printf ("Matrix %d x %d\n", numrow, numcol);
   //fscanf (file, "%d", &i);    
   while (TRUE)
-    {  
+  {  
       fscanf (file, "%d", &i);
       if(feof(file)!=0)
         break;
       fscanf (file, "%d", &j);
       fscanf (file, "%f", &f);
       M[i-1][j-1]=f;
-      //printf ("M[ %d , %d ] = %f\n", i, j, M[i][j]);
-    }
-    for (int i = 0; i <48; i++){
+      printf ("M[ %d , %d ] = %f\n", i, j, M[i][j]);
+  }
+    /*for (int i = 0; i <48; i++){
 	for (int j = 0; j <48; j++){
 		printf("%f", M[i][j]);
 		if(j!=47)
@@ -46,7 +46,7 @@ int main(int argc, char** argv) {
 		}
 	}
 	printf("\n");
-   }
+   }*/
   fclose (file); 
   MPI_Finalize();
 }
