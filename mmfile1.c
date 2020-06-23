@@ -14,7 +14,7 @@ int main(int argc, char** argv) {
   int numrow=0;
   int numcol=0;
   int nonzero=0;
-  float M[48][48];
+  unsigned M[numrow][numcol];
   for (int k=0; k<48; k++)
   {
     for (int w=0; w<48; w++)
