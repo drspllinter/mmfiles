@@ -38,15 +38,15 @@ int main(int argc, char** argv) {
       //printf ("M[ %d , %d ] = %f\n", i, j, M[i][j]);
     }
     for (int i = 0; i <48; i++){
-				for (int j = 0; j <48; j++){
-					printf("%f", M[i][j]);
-					if(j!=n-1)
-					{
-						printf(", ");	
-					}
-				}
-				printf("\n");
-			}
+	for (int j = 0; j <48; j++){
+		printf("%f", M[i][j]);
+		if(j!=47)
+		{
+				printf(", ");	
+		}
+	}
+	printf("\n");
+   }
   fclose (file); 
   MPI_Finalize();
 }
