@@ -22,9 +22,9 @@ int main(int argc, char** argv) {
       fscanf (file, "%d", &i);
       fscanf (file, "%d", &j);
       fscanf (file, "%f", &f);
-      printf ("M[ %d , %d ] = %f\n", i, j, f);
       if(feof(file)!=0)
         break;
+      printf ("M[ %d , %d ] = %f\n", i, j, f);
     }
   fclose (file); 
   MPI_Finalize();
