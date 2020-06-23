@@ -17,7 +17,7 @@ int main(int argc, char** argv) {
   fscanf (file, "%d", &numrow);
   fscanf (file, "%d", &numcol);
   fscanf (file, "%d", &nonzero);
-  unsigned M[numrow][numcol];
+  float M[numrow][numcol];
   for (int k=0; k<48; k++)
   {
     for (int w=0; w<48; w++)
