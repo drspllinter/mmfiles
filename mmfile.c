@@ -9,7 +9,7 @@ int main(int argc, char** argv) {
   FILE *fp;
   char buff;
   fp = fopen("/tmp/test.txt", "r");
-  fscanf(fp, "%s", buff);
-  printf("1 : %s\n", buff );
+ /* fscanf(fp, "%s", buff);
+  printf("1 : %s\n", buff );*/
   MPI_Finalize();
 }
