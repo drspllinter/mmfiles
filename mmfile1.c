@@ -26,7 +26,6 @@ int main(int argc, char** argv) {
   fscanf (file, "%d", &numcol);
   fscanf (file, "%d", &nonzero);
   printf ("Matrix %d x %d\n", numrow, numcol);
-  unsigned (*arr)[m] = malloc(sizeof(unsigned[n][m]));
   //fscanf (file, "%d", &i);    
   while (TRUE)
     {  
