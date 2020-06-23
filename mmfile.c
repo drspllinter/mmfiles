@@ -6,13 +6,19 @@
 int main(int argc, char** argv) {
   // Initialize the MPI environment
   MPI_Init(NULL, NULL); 
-  FILE* file = fopen ("bcsstk01.mtx", "r");
+  FILE* file = fopen ("test.mtx", "r");
   int i = 0;
-  fscanf (file, "%d", &i);    
+  int numrow=0;
+  int numcol=0;
+  fscanf (file, "%d", &numrow);
+  fscanf (file, "%d", &numcol);
+  printf ("Matrix %d x %d\n", numrow, numcol);
+  //fscanf (file, "%d", &i);    
   while (!feof (file))
     {  
-      printf ("%d ", i);
-      fscanf (file, "%d", &i);      
+      fscanf (file, "%f", &i);
+      printf ("%f ", i);
+      
     }
   fclose (file); 
   MPI_Finalize();
