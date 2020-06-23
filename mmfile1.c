@@ -12,7 +12,7 @@ int main(int argc, char** argv) {
   int j=0;
   float f=0;
   int numrow=0;
-  int numcol=0
+  int numcol=0;
   int nonzero=0;
   fscanf (file, "%d", &numrow);
   fscanf (file, "%d", &numcol);
