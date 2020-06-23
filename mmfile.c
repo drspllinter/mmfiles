@@ -5,18 +5,15 @@
 
 int main(int argc, char** argv) {
   // Initialize the MPI environment
-  MPI_Init(NULL, NULL);
-  char c[1000];
-    FILE *fptr;
-    if ((fptr = fopen("test.txt", "r")) == NULL) {
-        printf("Error! opening file");
-        // Program exits if file pointer returns NULL.
-        exit(1);
+  MPI_Init(NULL, NULL); 
+  FILE* file = fopen ("test.txt", "r");
+  int i = 0;
+  fscanf (file, "%d", &i);    
+  while (!feof (file))
+    {  
+      printf ("%d ", i);
+      fscanf (file, "%d", &i);      
     }
-
-    // reads text until newline is encountered
-    fscanf(fptr, "%[^\n]", c);
-    printf("Data from the file:\n%s", c);
-    fclose(fptr);
+  fclose (file); 
   MPI_Finalize();
 }
