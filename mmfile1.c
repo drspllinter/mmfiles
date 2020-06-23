@@ -7,7 +7,7 @@ int main(int argc, char** argv) {
   // Initialize the MPI environment
   MPI_Init(NULL, NULL); 
   FILE* file = fopen ("bcsstk01.mtx", "r");
-  
+  FILE *fp = fopen("cd.mtx", "w");
   int i = 0;
   int j=0;
   float f=0;
@@ -35,18 +35,12 @@ int main(int argc, char** argv) {
       fscanf (file, "%d", &j);
       fscanf (file, "%f", &f);
       M[i-1][j-1]=f;
-      printf ("M[ %d , %d ] = %f\n", i-1, j-1, M[i-1][j-1]);
+      fprintf(fp, "%d, %d, %f\n", i, j, M[i-1][j-1]);
+     // printf ("M[ %d , %d ] = %f\n", i-1, j-1, M[i-1][j-1]);
   }
-    /*for (int i = 0; i <48; i++){
-	for (int j = 0; j <48; j++){
-		printf("%f", M[i][j]);
-		if(j!=47)
-		{
-				printf(", ");	
-		}
-	}
-	printf("\n");
-   }*/
-  fclose (file); 
+      
+
+  fclose (file);
+  fclose (fp);
   MPI_Finalize();
 }
