@@ -14,10 +14,19 @@ int main(int argc, char** argv) {
   int numrow=0;
   int numcol=0;
   int nonzero=0;
+  float M[48][48];
+  for (int k=0; k<48; k++)
+  {
+    for (int w=0; w<48; w++)
+    {
+      M[k][w]=0; 
+    }
+  }
   fscanf (file, "%d", &numrow);
   fscanf (file, "%d", &numcol);
   fscanf (file, "%d", &nonzero);
   printf ("Matrix %d x %d\n", numrow, numcol);
+  unsigned (*arr)[m] = malloc(sizeof(unsigned[n][m]));
   //fscanf (file, "%d", &i);    
   while (TRUE)
     {  
@@ -26,7 +35,8 @@ int main(int argc, char** argv) {
         break;
       fscanf (file, "%d", &j);
       fscanf (file, "%f", &f);
-      printf ("M[ %d , %d ] = %f\n", i, j, f);
+      M[i-1][j-1]=f;
+      printf ("M[ %d , %d ] = %f\n", i, j, M[i][j]);
     }
   fclose (file); 
   MPI_Finalize();
