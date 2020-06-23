@@ -6,7 +6,7 @@
 int main(int argc, char** argv) {
   // Initialize the MPI environment
   MPI_Init(NULL, NULL); 
-  FILE* file = fopen ("test.txt", "r");
+  FILE* file = fopen ("test.mtx", "r");
   int i = 0;
   fscanf (file, "%d", &i);    
   while (!feof (file))
