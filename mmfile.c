@@ -20,10 +20,10 @@ int main(int argc, char** argv) {
   while (TRUE)
     {  
       fscanf (file, "%d", &i);
-      fscanf (file, "%d", &j);
-      fscanf (file, "%f", &f);
       if(feof(file)!=0)
         break;
+      fscanf (file, "%d", &j);
+      fscanf (file, "%f", &f);
       printf ("M[ %d , %d ] = %f\n", i, j, f);
     }
   fclose (file); 
