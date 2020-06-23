@@ -14,6 +14,10 @@ int main(int argc, char** argv) {
   int numrow=0;
   int numcol=0;
   int nonzero=0;
+  fscanf (file, "%d", &numrow);
+  fscanf (file, "%d", &numcol);
+  fscanf (file, "%d", &nonzero);
+  unsigned M[numrow][numcol];
   for (int k=0; k<48; k++)
   {
     for (int w=0; w<48; w++)
@@ -21,10 +25,6 @@ int main(int argc, char** argv) {
       M[k][w]=0; 
     }
   }
-  fscanf (file, "%d", &numrow);
-  fscanf (file, "%d", &numcol);
-  fscanf (file, "%d", &nonzero);
-  unsigned M[numrow][numcol];
   printf ("Matrix %d x %d\n", numrow, numcol);
   //fscanf (file, "%d", &i);    
   while (TRUE)
